@@ -15,22 +15,27 @@
     <section class="landing-section">
       <div class="landing-social">
         <div class="landing-social-line" />
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+          <font-awesome-icon
+            class="landing-social-icon"
+            :icon="['fab', 'font-awesome']"
+          />
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+          <font-awesome-icon
+            class="landing-social-icon"
+            :icon="['fab', 'font-awesome']"
+          />
+        </a>
         <a
-          href="https://www.instagram.com/"
+          href="https://www.linkedin.com/in/thaislorentz/"
           target="_blank"
           rel="noreferrer"
         >
-          <font-awesome-icon class="landing-social-icon" :icon="['fab', 'font-awesome']" />
-        </a>
-        <a
-          href="https://www.facebook.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <font-awesome-icon class="landing-social-icon" :icon="['fab', 'font-awesome']"/>
-        </a>
-        <a href="https://www.linkedin.com/in/thaislorentz/" target="_blank" rel="noreferrer">
-          <font-awesome-icon class="landing-social-icon" :icon="['fab', 'font-awesome']" />
+          <font-awesome-icon
+            class="landing-social-icon"
+            :icon="['fab', 'font-awesome']"
+          />
         </a>
         <div class="landing-social-line" />
       </div>
@@ -40,7 +45,7 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
         </p>
         <div class="landing-brand-button">
-        <Button msg="Ver Cardápio" @click="teste()"/>
+          <Button msg="Ver Cardápio" @click="teste()" />
         </div>
       </div>
       <div class="landing-container">
@@ -52,22 +57,91 @@
         <span class="landing-container-burguer">BURGUER</span>
       </div>
     </section>
+    <section class="landing-promotion">
+      <h2 class="landing-promotion-title">
+        PROMOÇÕES <span class="landing-promotion-title-white">DA SEMANA</span>
+      </h2>
+      <div class="landing-promotion-grid">
+        <div v-for="(promotion, index) in promotions" :key="index">
+          <Card :promotion="promotion" />
+        </div>
+      </div>
+        <div class="landing-promotion-button">
+          <Button msg="Ver Cardápio" @click="teste()" />
+        </div>
+    </section>
   </div>
 </template>
 
 <script>
-import Button from '../../components/Button/Index.vue'
+import Button from "../../components/Button/Index.vue";
+import Card from "../../components/Card/Index.vue";
 
 export default {
   name: "Landing",
   components: {
-    Button
+    Button,
+    Card
+  },
+  data() {
+    return {
+      promotions: [
+        {
+          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+          name: "Combo sanduiches",
+          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
+          id: 1,
+        },
+        {
+          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+          name: "Combo sanduiches",
+          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
+          id: 2,
+        },
+        {
+          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+          name: "Combo sanduiches",
+          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
+          id: 3,
+        },
+        {
+          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+          name: "Combo sanduiches",
+          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
+          id: 4,
+        },
+        {
+          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+          name: "Combo sanduiches",
+          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
+          id: 5,
+        },
+        {
+          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+          name: "Combo sanduiches",
+          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
+          id: 6,
+        },
+        {
+          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+          name: "Combo sanduiches",
+          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
+          id: 7,
+        },
+        {
+          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+          name: "Combo sanduiches",
+          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
+          id: 8,
+        },
+      ],
+    };
   },
   methods: {
     teste() {
-      console.log('foi')
-    }
-  }
+      console.log("foi");
+    },
+  },
 };
 </script>
 
