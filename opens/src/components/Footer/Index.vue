@@ -63,7 +63,7 @@ export default {
 footer {
   background: $predominant;
   border-top: solid $secondary 4px;
-  margin-top: 20px;
+  // margin-top: 20px;
   display: flex;
   flex-direction: column;
   color: $white;

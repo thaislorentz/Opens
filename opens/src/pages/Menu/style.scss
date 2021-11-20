@@ -1,1 +1,30 @@
 @import "@/assets/scss/_colors.scss";
+.menu {
+    &-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-list {
+        width: 70%;
+    }
+
+    &-header {
+        background-color: $predominant;
+        display: flex;
+        justify-content: space-between;
+        height: 33vh;
+
+        &-image {
+            width: 130px;
+            margin: 0 20px;
+        }
+    }
+
+    &-food {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: -80px;
+    }
+}
