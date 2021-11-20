@@ -16,13 +16,27 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+@import "@/assets/scss/_colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+body {
+  background: $background;
+}
+
+input {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
 }
 </style>
