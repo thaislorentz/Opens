@@ -66,9 +66,55 @@
           <Card :promotion="promotion" />
         </div>
       </div>
-        <div class="landing-promotion-button">
-          <Button msg="Ver Cardápio" @click="teste()" />
+      <div class="landing-promotion-button">
+        <Button msg="Ver Cardápio" @click="teste()" />
+      </div>
+    </section>
+    <section class="landing-menu">
+      <div class="landing-menu-section">
+        <div class="landing-menu-section-container">
+          <div class="landing-menu-section-container-servico">
+            <span class="landing-menu-section-container-servico-title"
+              >CARDÁPIO</span
+            >
+          </div>
+          <img
+            src="../../assets/images/cardapio1.jpg"
+            alt="top-airbnb-serviço"
+            class="landing-menu-section-container-imagem"
+          />
+          <div class="landing-menu-section-container-card">
+            <Card
+              :promotion="{
+                name: 'Hospedagens',
+                description:
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet',
+              }"
+            />
+          </div>
         </div>
+        <div class="landing-menu-section-container reverse">
+          <div class="landing-menu-section-container-servico">
+            <span class="landing-menu-section-container-servico-title"
+              >CARDÁPIO</span
+            >
+          </div>
+          <img
+            src="../../assets/images/cardapio2.jpg"
+            alt="top-airbnb-serviço"
+            class="landing-menu-section-container-imagem"
+          />
+          <div class="landing-menu-section-container-card">
+            <Card
+              :promotion="{
+                name: 'Hospedagens',
+                description:
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet',
+              }"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -81,7 +127,7 @@ export default {
   name: "Landing",
   components: {
     Button,
-    Card
+    Card,
   },
   data() {
     return {

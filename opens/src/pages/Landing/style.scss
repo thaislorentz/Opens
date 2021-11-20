@@ -1,6 +1,6 @@
 @import "@/assets/scss/_colors.scss";
 
-.landing {    
+.landing {
     &-header {
         margin: 0 20px;
         display: flex;
@@ -33,15 +33,15 @@
     &-section {
         display: flex;
     }
-    
+
     &-social {
         display: flex;
         flex-direction: column;
         align-items: center;
         left: 50px;
-        top:200px;
+        top: 200px;
         position: absolute;
-        
+
         &-line {
             width: 3px;
             height: 60px;
@@ -54,7 +54,7 @@
             color: $predominant;
         }
     }
-    
+
     &-brand {
         display: flex;
         flex-direction: column;
@@ -70,7 +70,7 @@
         &-title {
             font-size: 50px;
         }
-        &-text{
+        &-text {
             font-size: 18px;
             padding: 25px 0;
         }
@@ -109,7 +109,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 26px 10px;
+        margin: 30px;
         background: url("../../assets/images/background.png") no-repeat;
         background-position: bottom left;
         &-title {
@@ -131,17 +131,149 @@
             justify-content: flex-end;
         }
     }
+
+    &-menu {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+        flex-direction: column;
+
+        &-section {
+            display: flex;
+            justify-content: space-between;
+            &-container {
+                width: fit-content;
+                display: flex;
+                position: relative;
+                height: fit-content;
+                margin-top: 100px;
+
+                &-servico {
+                    background: $predominant;
+                    display: flex;
+                    height: fit-content;
+                    margin-top: 20px;
+                    padding: 30px 5px;
+
+                    &-title {
+                        color: $secondary;
+                        font-size: 40px;
+                        font-weight: bold;
+                        transform: rotate(180deg);
+                        writing-mode: vertical-lr;
+                        text-orientation: mixed;
+                    }
+                }
+
+                &-imagem {
+                    height: 620px;
+                    margin-bottom: 50px;
+                }
+
+                &-card {
+                    margin-top: auto;
+                    margin-left: -60px;
+                }
+
+                &.reverse {
+                    flex-direction: row-reverse;
+                    margin-top: 0;
+
+                    .landing-menu-section-container {
+                        background-color: red;
+                        &-servico {
+                            margin-top: auto;
+                            margin-bottom: 20px;
+
+                            &-title {
+                                transform: rotate(0deg);
+                            }
+                        }
+
+                        &-imagem {
+                            margin-bottom: 0;
+                        }
+
+                        &-card {
+                            margin-top: 50px;
+                            margin-left: 100px;
+                            margin-right: -100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1710px) {
+    &-servicos {
+        padding: 0;
+        flex-direction: column;
+
+        &-section {
+            &-container {
+                &-servico {
+                    &-title {
+                        font-size: 30px;
+                    }
+                }
+
+                &-imagem {
+                    height: 500px;
+                }
+
+                &-card {
+                    width: 350px;
+                    padding: 15px;
+
+                    &-title {
+                        font-size: 20px;
+                    }
+
+                    &-texto {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1310px) {
     .landing {
+        &-menu {
+            &-section {
+                flex-direction: column;
+                &-container {
+                    &.reverse {
+                        flex-direction: row-reverse;
+                        margin-top: 80px;
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+        &-menu {
+            &-container {
+                flex-direction: column;
+                &-container {
+                    &.reverse {
+                        flex-direction: row-reverse;
+                        margin-top: 80px;
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
         &-brand {
             padding: 90px;
             margin-left: 40px;
             &-title {
                 font-size: 45px;
             }
-            &-text{
+            &-text {
                 font-size: 16px;
             }
         }
@@ -152,7 +284,7 @@
             height: 78vh;
             &-image {
                 width: 450px;
-            } 
+            }
             &-burguer {
                 font-size: 90px;
                 // right:-30px;
@@ -175,7 +307,7 @@
             &-title {
                 font-size: 40px;
             }
-            &-text{
+            &-text {
                 font-size: 12px;
             }
             &-button {
@@ -187,7 +319,7 @@
             &-image {
                 width: 350px;
                 left: -70px;
-            } 
+            }
             &-burguer {
                 font-size: 70px;
                 // right:-20px;
@@ -208,7 +340,7 @@
             &-title {
                 font-size: 35px;
             }
-            &-text{
+            &-text {
                 font-size: 12px;
             }
             &-button {
@@ -221,9 +353,79 @@
             &-image {
                 width: 300px;
                 left: -70px;
-                top: 130px
+                top: 130px;
             }
         }
+
+        &-menu {
+            &-section {
+              &-container {
+                margin-top: auto;
+      
+                &-servico {
+                  margin-top: 100px;
+                  padding: 60px 5px;
+      
+                  &-title {
+                    font-size: 30px;
+                  }
+                }
+      
+                &-imagem {
+                  height: 400px;
+                  margin-bottom: 50px;
+                }
+      
+                &-card {
+                  width: 100%;
+                  padding: 15px;
+                  margin: 290px 10px 0 -200px;
+      
+                  &-icone {
+                    margin-bottom: 0;
+                    font-size: 40px;
+                  }
+      
+                  &-title {
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                  }
+      
+                  &-texto {
+                    font-size: 12px;
+                    color: #766c6c;
+                    margin-bottom: 10px;
+                  }
+      
+                  &-botao {
+                    font-size: 12px;
+      
+                    &-icone {
+                      margin-left: 10px;
+                    }
+                  }
+                }
+      
+                &.reverse {
+                  margin-top: 80px;
+                  margin-left: auto;
+      
+                  .landing-menu-section-container {
+                    &-servico {
+                      margin-top: 30px;
+                      margin-bottom: auto;
+                    }
+      
+                    &-card {
+                      margin-top: 250px;
+                      margin-left: 10px;
+                      margin-right: -200px;
+                    }
+                  }
+                }
+              }
+            }
+          }
     }
 }
 @media screen and (max-width: 700px) {
@@ -231,7 +433,7 @@
         &-nav {
             display: none;
         }
-        &-header{
+        &-header {
             background-color: $secondary;
             margin: 0;
         }
@@ -247,7 +449,7 @@
             &-title {
                 font-size: 45px;
             }
-            &-text{
+            &-text {
                 font-size: 18px;
             }
             &-button {
