@@ -118,6 +118,9 @@
             font-size: 35px;
             color: $secondary;
             margin-bottom: 20px;
+            &-white {
+                color: $background
+            }
         }
         &-grid {
             margin: 0 10%;
@@ -132,7 +135,7 @@
         }
     }
 
-    &-funcionar {
+    &-work {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -144,7 +147,7 @@
             font-weight: bold;
         }
 
-        &-passos {
+        &-sequence {
             width: 100%;
             background-color: #f8f8f8;
             border-radius: 10px;
@@ -152,7 +155,7 @@
             justify-content: space-between;
             padding: 20px;
 
-            &-etapas {
+            &-phases {
                 display: flex;
                 align-items: center;
                 width: 100%;
@@ -179,12 +182,12 @@
                     transform: rotate(180deg);
                 }
 
-                &-numero {
+                &-number {
                     color: $predominant;
                     font-size: 30px;
                     font-weight: bold;
                 }
-                &-texto {
+                &-text {
                     display: flex;
                     flex-direction: column;
                     margin-left: 5px;
@@ -193,7 +196,7 @@
                         font-size: 16px;
                         font-weight: bold;
                     }
-                    &-informacao {
+                    &-information {
                         color: #766c6c;
                         font-size: 12px;
                     }
@@ -212,7 +215,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        padding: 40px;
+        padding: 20px 40px;
         flex-direction: column;
 
         &-section {
@@ -319,8 +322,7 @@
 
 @media screen and (max-width: 1050px) {
     .landing {
-        &-funcionar {
-            margin-top: 100px;
+        &-work {
             background-color: transparent;
             padding: 0;
             &-title {
@@ -331,11 +333,11 @@
                 padding: 10px;
             }
 
-            &-passos {
+            &-sequence {
                 flex-direction: column;
                 height: auto;
 
-                &-etapas {
+                &-phases {
                     margin-bottom: 30px;
 
                     &.bottom::after {
@@ -355,11 +357,11 @@
                         z-index: 1;
                         transform: rotate(270deg);
                     }
-                    &-texto {
+                    &-text {
                         &-title {
                             font-size: 20px;
                         }
-                        &-informacao {
+                        &-information {
                             font-size: 16px;
                         }
                     }
@@ -369,22 +371,11 @@
     }
 }
 
-@media screen and (max-width: 1310px) {
+@media screen and (max-width: 1330px) {
     .landing {
         &-menu {
+            padding: 0 40px;
             &-section {
-                flex-direction: column;
-                &-container {
-                    &.reverse {
-                        flex-direction: row-reverse;
-                        margin-top: 80px;
-                        margin-left: auto;
-                    }
-                }
-            }
-        }
-        &-menu {
-            &-container {
                 flex-direction: column;
                 &-container {
                     &.reverse {
@@ -406,7 +397,7 @@
             }
         }
         &-promotion {
-            margin: -27px 10px;
+            margin: -27px 10px 10px 10px;
         }
         &-container {
             height: 78vh;
@@ -415,7 +406,6 @@
             }
             &-burguer {
                 font-size: 90px;
-                // right:-30px;
             }
         }
     }
@@ -428,6 +418,11 @@
         }
         &-promotion {
             margin: -120px 10px;
+            &-title{
+                &-white {
+                    color:$secondary
+                }
+            }
         }
         &-brand {
             padding: 90px 0 0 90px;

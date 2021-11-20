@@ -70,45 +70,45 @@
         <Button msg="Ver Cardápio" @click="teste()" />
       </div>
     </section>
-    <section class="landing-funcionar" id="servicos">
-      <span class="landing-funcionar-title">COMO FUNCIONA</span>
-      <div class="landing-funcionar-passos">
-        <div class="landing-funcionar-passos-etapas bottom">
-          <span class="landing-funcionar-passos-etapas-numero">1.</span>
-          <div class="landing-funcionar-passos-etapas-texto">
-            <span class="landing-funcionar-passos-etapas-texto-title"
+    <section class="landing-work" id="servicos">
+      <span class="landing-work-title">COMO FUNCIONA</span>
+      <div class="landing-work-sequence">
+        <div class="landing-work-sequence-phases bottom">
+          <span class="landing-work-sequence-phases-number">1.</span>
+          <div class="landing-work-sequence-phases-text">
+            <span class="landing-work-sequence-phases-text-title"
               >Navegue pelo site</span
             >
-            <span class="landing-funcionar-passos-etapas-texto-informacao"
+            <span class="landing-work-sequence-phases-text-information"
               >Lorem ipsum dolor sit amet, consectetur </span
             >
           </div>
         </div>
-        <div class="landing-funcionar-passos-etapas top">
-          <span class="landing-funcionar-passos-etapas-numero">2.</span>
-          <div class="landing-funcionar-passos-etapas-texto">
-            <span class="landing-funcionar-passos-etapas-texto-title"
+        <div class="landing-work-sequence-phases top">
+          <span class="landing-work-sequence-phases-number">2.</span>
+          <div class="landing-work-sequence-phases-text">
+            <span class="landing-work-sequence-phases-text-title"
               >Decida o que comer</span
             >
-            <span class="landing-funcionar-passos-etapas-texto-informacao"
+            <span class="landing-work-sequence-phases-text-information"
               >Lorem ipsum dolor sit amet, consectetur </span
             >
           </div>
         </div>
-        <div class="landing-funcionar-passos-etapas bottom">
-          <span class="landing-funcionar-passos-etapas-numero">3.</span>
-          <div class="landing-funcionar-passos-etapas-texto">
-            <span class="landing-funcionar-passos-etapas-texto-title"
+        <div class="landing-work-sequence-phases bottom">
+          <span class="landing-work-sequence-phases-number">3.</span>
+          <div class="landing-work-sequence-phases-text">
+            <span class="landing-work-sequence-phases-text-title"
               >Finalize a compra</span
             >
-            <span class="landing-funcionar-passos-etapas-texto-informacao"
+            <span class="landing-work-sequence-phases-text-information"
               >Lorem ipsum dolor sit amet, consectetur </span
             >
           </div>
         </div>
-        <div class="landing-funcionar-passos-etapas">
-          <span class="landing-funcionar-passos-etapas-numero">4.</span>
-          <span class="landing-funcionar-passos-etapas-final"
+        <div class="landing-work-sequence-phases">
+          <span class="landing-work-sequence-phases-number">4.</span>
+          <span class="landing-work-sequence-phases-final"
             >SEU LANCHE SERÁ ENTREGUE COMO COMBINADO!</span
           >
         </div>
@@ -160,18 +160,21 @@
         </div>
       </div>
     </section>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Button from "../../components/Button/Index.vue";
 import Card from "../../components/Card/Index.vue";
+import Footer from "../../components/Footer/Index.vue";
 
 export default {
   name: "Landing",
   components: {
     Button,
     Card,
+    Footer
   },
   data() {
     return {
