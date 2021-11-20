@@ -1,22 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Landing />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Landing from './pages/Landing/Landing.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Landing
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/_colors.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700&display=swap");
 * {
@@ -39,4 +38,5 @@ input {
 button {
   cursor: pointer;
 }
+
 </style>

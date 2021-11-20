@@ -1,0 +1,85 @@
+@import "@/assets/scss/_colors.scss";
+
+.landing {
+    &-header {
+        margin: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-image {
+            width: 130px;
+        }
+    }
+
+    &-nav {
+        z-index: 1;
+        &-items {
+            text-decoration: none;
+            color: $white;
+            font-size: 20px;
+            padding: 0 45px;
+
+            &.selected {
+                background-color: #fff;
+                border-radius: 30px;
+                padding: 5px 20px;
+                color: $predominant;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &-section {
+        display: flex;
+    }
+    
+    &-social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: 50px;
+        position: absolute;
+        
+        &-line {
+            width: 3px;
+            height: 60px;
+            margin: 10px 0;
+            background-color: $white;
+        }
+        &-icon {
+            margin: 2px 0;
+        }
+    }
+    
+    &-brand {
+        display: flex;
+        flex-direction: column;
+        width: 38%;
+        justify-content: flex-start;
+        padding: 100px;
+        margin-left: 100px;
+        &-title {
+            font-size: 50px;
+        }
+        &-text{
+            font-size: 18px;
+        }
+    }
+
+    &-container {
+        background-color: $predominant;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 83vh;
+
+        &-image {
+            width: 550px;
+            position: relative;
+            left: -130px;
+            top: 100px;
+        }
+    }
+}
