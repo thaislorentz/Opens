@@ -132,6 +132,82 @@
         }
     }
 
+    &-funcionar {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: $predominant;
+        padding: 30px;
+        &-title {
+            color: $secondary;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        &-passos {
+            width: 100%;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+
+            &-etapas {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                position: relative;
+
+                &.bottom::after {
+                    content: "";
+                    min-width: 120px;
+                    height: 25px;
+                    margin-top: auto;
+                    z-index: 1;
+                    background: url("../../assets/images/seta2.svg") no-repeat;
+                    transform: rotatey(180deg);
+                }
+
+                &.top::after {
+                    content: "";
+                    min-width: 120px;
+                    height: 25px;
+                    margin-bottom: auto;
+                    z-index: 1;
+                    background: url("../../assets/images/seta2.svg") no-repeat;
+                    background-repeat: no-repeat;
+                    transform: rotate(180deg);
+                }
+
+                &-numero {
+                    color: $predominant;
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+                &-texto {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 5px;
+                    &-title {
+                        color: $predominant;
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                    &-informacao {
+                        color: #766c6c;
+                        font-size: 12px;
+                    }
+                }
+                &-final {
+                    margin-left: 5px;
+                    color: $predominant;
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
     &-menu {
         width: 100%;
         display: flex;
@@ -234,6 +310,58 @@
 
                     &-texto {
                         font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .landing {
+        &-funcionar {
+            margin-top: 100px;
+            background-color: transparent;
+            padding: 0;
+            &-title {
+                background-color: $predominant;
+                width: 100%;
+                font-size: 28px;
+                text-align: center;
+                padding: 10px;
+            }
+
+            &-passos {
+                flex-direction: column;
+                height: auto;
+
+                &-etapas {
+                    margin-bottom: 30px;
+
+                    &.bottom::after {
+                        content: "";
+                        min-width: 60px;
+                        height: 25px;
+                        margin: auto 0 0 auto;
+                        z-index: 1;
+                        transform: rotate(270deg);
+                    }
+
+                    &.top::after {
+                        content: "";
+                        min-width: 60px;
+                        height: 25px;
+                        margin: auto 0 0 auto;
+                        z-index: 1;
+                        transform: rotate(270deg);
+                    }
+                    &-texto {
+                        &-title {
+                            font-size: 20px;
+                        }
+                        &-informacao {
+                            font-size: 16px;
+                        }
                     }
                 }
             }
@@ -359,73 +487,72 @@
 
         &-menu {
             &-section {
-              &-container {
-                margin-top: auto;
-      
-                &-servico {
-                  margin-top: 100px;
-                  padding: 60px 5px;
-      
-                  &-title {
-                    font-size: 30px;
-                  }
-                }
-      
-                &-imagem {
-                  height: 400px;
-                  margin-bottom: 50px;
-                }
-      
-                &-card {
-                  width: 100%;
-                  padding: 15px;
-                  margin: 290px 10px 0 -200px;
-      
-                  &-icone {
-                    margin-bottom: 0;
-                    font-size: 40px;
-                  }
-      
-                  &-title {
-                    font-size: 20px;
-                    margin-bottom: 10px;
-                  }
-      
-                  &-texto {
-                    font-size: 12px;
-                    color: #766c6c;
-                    margin-bottom: 10px;
-                  }
-      
-                  &-botao {
-                    font-size: 12px;
-      
-                    &-icone {
-                      margin-left: 10px;
-                    }
-                  }
-                }
-      
-                &.reverse {
-                  margin-top: 80px;
-                  margin-left: auto;
-      
-                  .landing-menu-section-container {
+                &-container {
+                    margin-top: auto;
+
                     &-servico {
-                      margin-top: 30px;
-                      margin-bottom: auto;
+                        margin-top: 100px;
+                        padding: 60px 5px;
+
+                        &-title {
+                            font-size: 30px;
+                        }
                     }
-      
+
+                    &-imagem {
+                        height: 320px;
+                    }
+
                     &-card {
-                      margin-top: 250px;
-                      margin-left: 10px;
-                      margin-right: -200px;
+                        width: 100%;
+                        padding: 15px;
+                        margin: 290px 10px 0 -200px;
+
+                        &-icone {
+                            margin-bottom: 0;
+                            font-size: 40px;
+                        }
+
+                        &-title {
+                            font-size: 20px;
+                            margin-bottom: 10px;
+                        }
+
+                        &-texto {
+                            font-size: 12px;
+                            color: #766c6c;
+                            margin-bottom: 10px;
+                        }
+
+                        &-botao {
+                            font-size: 12px;
+
+                            &-icone {
+                                margin-left: 10px;
+                            }
+                        }
                     }
-                  }
+
+                    &.reverse {
+                        margin-top: 80px;
+                        margin-left: auto;
+
+                        .landing-menu-section-container {
+                            &-servico {
+                                margin-top: 30px;
+                                margin-bottom: auto;
+                            }
+
+                            &-card {
+                                margin-top: 250px;
+                                margin-left: 10px;
+                                margin-right: -200px;
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
+        }
     }
 }
 @media screen and (max-width: 700px) {

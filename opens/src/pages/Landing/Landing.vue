@@ -70,6 +70,50 @@
         <Button msg="Ver Cardápio" @click="teste()" />
       </div>
     </section>
+    <section class="landing-funcionar" id="servicos">
+      <span class="landing-funcionar-title">COMO FUNCIONA</span>
+      <div class="landing-funcionar-passos">
+        <div class="landing-funcionar-passos-etapas bottom">
+          <span class="landing-funcionar-passos-etapas-numero">1.</span>
+          <div class="landing-funcionar-passos-etapas-texto">
+            <span class="landing-funcionar-passos-etapas-texto-title"
+              >Navegue pelo site</span
+            >
+            <span class="landing-funcionar-passos-etapas-texto-informacao"
+              >Lorem ipsum dolor sit amet, consectetur </span
+            >
+          </div>
+        </div>
+        <div class="landing-funcionar-passos-etapas top">
+          <span class="landing-funcionar-passos-etapas-numero">2.</span>
+          <div class="landing-funcionar-passos-etapas-texto">
+            <span class="landing-funcionar-passos-etapas-texto-title"
+              >Decida o que comer</span
+            >
+            <span class="landing-funcionar-passos-etapas-texto-informacao"
+              >Lorem ipsum dolor sit amet, consectetur </span
+            >
+          </div>
+        </div>
+        <div class="landing-funcionar-passos-etapas bottom">
+          <span class="landing-funcionar-passos-etapas-numero">3.</span>
+          <div class="landing-funcionar-passos-etapas-texto">
+            <span class="landing-funcionar-passos-etapas-texto-title"
+              >Finalize a compra</span
+            >
+            <span class="landing-funcionar-passos-etapas-texto-informacao"
+              >Lorem ipsum dolor sit amet, consectetur </span
+            >
+          </div>
+        </div>
+        <div class="landing-funcionar-passos-etapas">
+          <span class="landing-funcionar-passos-etapas-numero">4.</span>
+          <span class="landing-funcionar-passos-etapas-final"
+            >SEU LANCHE SERÁ ENTREGUE COMO COMBINADO!</span
+          >
+        </div>
+      </div>
+    </section>
     <section class="landing-menu">
       <div class="landing-menu-section">
         <div class="landing-menu-section-container">
