@@ -15,27 +15,22 @@
     <section class="landing-section">
       <div class="landing-social">
         <div class="landing-social-line" />
-        <a href="https://t.me/topairbnbbrasil" target="_blank" rel="noreferrer">
-          <FontAwesomeIcon
-            class="landing-social-icon"
-            :icon="['fas', 'faTelegram']"
-            color="#fff"
-            size="2x"
-          />
-          <font-awesome-icon :icon="['fab', 'font-awesome']" />
-        </a>
-        oi
         <a
-          href="https://www.instagram.com/top.airbnb.brasil/"
+          href="https://www.instagram.com/"
           target="_blank"
           rel="noreferrer"
         >
-          <FontAwesomeIcon
-            class="landing-social-icon"
-            icon="{faInstagramSquare}"
-            color="#fff"
-            size="2x"
-          />
+          <font-awesome-icon class="landing-social-icon" :icon="['fab', 'font-awesome']" />
+        </a>
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <font-awesome-icon class="landing-social-icon" :icon="['fab', 'font-awesome']"/>
+        </a>
+        <a href="https://www.linkedin.com/in/thaislorentz/" target="_blank" rel="noreferrer">
+          <font-awesome-icon class="landing-social-icon" :icon="['fab', 'font-awesome']" />
         </a>
         <div class="landing-social-line" />
       </div>
@@ -44,7 +39,7 @@
         <p class="landing-brand-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
         </p>
-        <div class="landind-brand-button">
+        <div class="landing-brand-button">
         <Button msg="Ver Cardápio" @click="teste()"/>
         </div>
       </div>
@@ -54,6 +49,7 @@
           alt="Hamburger logo"
           src="../../assets/images/principal.png"
         />
+        <span class="landing-container-burguer">BURGUER</span>
       </div>
     </section>
   </div>

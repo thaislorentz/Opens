@@ -1,5 +1,5 @@
 <template>
-  <button @click="evt => $emit('click', evt)">{{text}}o</button>
+  <button @click="evt => $emit('click', evt)">{{text}}Ver Cardápio</button>
 </template>
 
 <script>
