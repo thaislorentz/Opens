@@ -232,7 +232,7 @@ export default {
   },
   methods: {
     teste() {
-      console.log("foi");
+      this.$router.push('/menu')
     },
   },
 };
