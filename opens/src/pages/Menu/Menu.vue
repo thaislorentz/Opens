@@ -10,8 +10,8 @@
               src="../../assets/images/logo.png"
             />
           </router-link>
-          <div>
-          <input type="search" name="" id="" />
+          <div class="menu-input">
+          <Input type="search"/>
           </div>
         </div>
         <div class="menu-food">
@@ -29,12 +29,14 @@
 <script>
 import Bag from "../../components/Bag/Index.vue";
 import Card from "../../components/Card/Index.vue";
+import Input from "../../components/Input/Index.vue";
 import Footer from "../../components/Footer/Index.vue";
 
 export default {
   name: "Menu",
   components: {
     Bag,
+    Input,
     Card,
     Footer,
   },
