@@ -45,9 +45,10 @@ export default {
 }
 
 .form {
-  
   border-bottom: 1px solid $white;
+    width: 100%;
   &-input {
+    width: 100%;
     background: none;
     border: none;
   }

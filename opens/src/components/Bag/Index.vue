@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="bag-button">
-      <router-link to="/checkout#1">
+      <router-link to="/checkout-1">
     <Button />
     </router-link>
     </div>
