@@ -69,6 +69,8 @@ export default {
   .card {
     width: 100%;
     flex-direction: row;
+    margin: 0;
+    margin-bottom: 10px;
     &-information {
       &-name {
         width: 100%;

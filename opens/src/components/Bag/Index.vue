@@ -98,4 +98,22 @@ h2 {
     justify-content: center;
   }
 }
+
+@media screen and (max-width: 1000px) {
+.bag {
+  width: 50%;
+}
+}
+@media screen and (max-width: 800px) {
+.bag {
+  width: 100%;
+  padding: 10px;
+  &-items {
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}
+}
 </style>

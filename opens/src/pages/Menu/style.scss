@@ -33,3 +33,33 @@
         margin-top: -80px;
     }
 }
+
+
+@media screen and (max-width: 800px) {
+.menu {
+    &-container {
+        flex-direction: column;
+    }
+    &-list {
+        width: 100%;
+    }
+    &-input {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+    &-header {
+        height: 18vh;
+        flex-direction: column;
+
+        &-image {
+            width: 80px;
+            margin: 0 20px;
+        }
+    }
+
+    &-food {
+        margin-top: 10px;
+    }
+}
+}
