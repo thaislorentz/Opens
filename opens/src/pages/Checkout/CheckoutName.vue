@@ -1,42 +1,44 @@
 <template>
   <div class="checkout">
-    <div class="checkout-header">
-      <router-link to="/">
-        <img
-          class="checkout-image"
-          alt="Hamburger logo"
-          src="../../assets/images/logo.png"
-        />
-      </router-link>
-      <h1 class="checkout-title">CHECKOUT</h1>
-    </div>
-    <div class="checkout-icones">
-      <font-awesome-icon
-        class="checkout-hamburguer select"
-        :icon="['fab', 'font-awesome']"
-      />
-      <font-awesome-icon
-        class="checkout-hamburguer"
-        :icon="['fab', 'font-awesome']"
-      />
-      <font-awesome-icon
-        class="checkout-hamburguer"
-        :icon="['fab', 'font-awesome']"
-      />
-    </div>
-    <div>
-      <h1 class="checkout-text">
-        Ficamos felizes com seu pedido, como gostaria de ser chamado?
-      </h1>
-    </div>
-    <div class="checkout-form">
-    <div class="checkout-form-size">
-      <Input type="form" />
+    <div class="checkout-container">
+      <div class="checkout-header">
+        <router-link to="/">
+          <img
+            class="checkout-image"
+            alt="Hamburger logo"
+            src="../../assets/images/logo.png"
+          />
+        </router-link>
+        <h1 class="checkout-title">CHECKOUT</h1>
       </div>
-    </div>
-    <div class="checkout-button">
-      <Button @click="() => this.$router.push('/menu')"/>
-      <Button @click="() => this.$router.push('/checkout-2')"/>
+      <div class="checkout-icones">
+        <font-awesome-icon
+          class="checkout-hamburguer select"
+          :icon="['fab', 'font-awesome']"
+        />
+        <font-awesome-icon
+          class="checkout-hamburguer"
+          :icon="['fab', 'font-awesome']"
+        />
+        <font-awesome-icon
+          class="checkout-hamburguer"
+          :icon="['fab', 'font-awesome']"
+        />
+      </div>
+      <div>
+        <h1 class="checkout-text">
+          Ficamos felizes com seu pedido, como gostaria de ser chamado?
+        </h1>
+      </div>
+      <div class="checkout-form">
+        <div class="checkout-form-size">
+          <Input type="form" />
+        </div>
+      </div>
+      <div class="checkout-button">
+        <Button @click="() => this.$router.push('/menu')" />
+        <Button @click="() => this.$router.push('/checkout-2')" />
+      </div>
     </div>
       <Footer />
   </div>
@@ -63,9 +65,18 @@ export default {
 <style lang="scss">
 @import "@/assets/scss/_colors.scss";
 .checkout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
   &-header {
     display: flex;
     align-items: center;
+  }
+
+  &-container {
+    height: 100%;
+    flex: 1;
   }
 
   &-image {
@@ -117,29 +128,28 @@ export default {
 }
 
 @media screen and (max-width: 600px) {
-.checkout {
-  &-title {
-    width: calc(100% - 190px);
-    text-align: center;
-  }
+  .checkout {
+    &-title {
+      width: calc(100% - 190px);
+      text-align: center;
+    }
 
-  &-hamburguer {
-    margin-left: 10px;
-  }
+    &-hamburguer {
+      margin-left: 10px;
+    }
 
-  &-text {
-    font-size: 20px;
-    margin: 0 20px;
-  }
+    &-text {
+      font-size: 20px;
+      margin: 0 20px;
+    }
 
-  &-form {
-    margin: 50px;
+    &-form {
+      margin: 50px;
 
-    &-size {
-      width: 100%;
+      &-size {
+        width: 100%;
+      }
     }
   }
-}
-
 }
 </style>

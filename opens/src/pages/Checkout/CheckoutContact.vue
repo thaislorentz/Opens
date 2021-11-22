@@ -1,5 +1,6 @@
 <template>
   <div class="checkout">
+    <div class="checkout-container">
     <div class="checkout-header">
       <router-link to="/">
         <img
@@ -37,6 +38,7 @@
     <div class="checkout-button">
       <Button @click="() => this.$router.push('/checkout-1')"/>
       <Button @click="() => this.$router.push('/checkout-3')"/>
+    </div>
     </div>
       <Footer />
   </div>

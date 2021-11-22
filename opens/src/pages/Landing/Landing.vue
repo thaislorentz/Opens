@@ -9,10 +9,10 @@
       <nav class="landing-nav">
         <a class="landing-nav-items" href="#home"> Home </a>
         <a class="landing-nav-items" href="#promocoes"> Promoções </a>
-        <a class="landing-nav-items selected" href="#cardapio"> Cardápio </a>
+        <a class="landing-nav-items selected" href="#cardapio" @click="router()"> Cardápio </a>
       </nav>
     </header>
-    <section class="landing-section">
+    <section class="landing-section" id="home">
       <div class="landing-social">
         <div class="landing-social-line" />
         <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
@@ -45,7 +45,7 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do
         </p>
         <div class="landing-brand-button">
-          <Button msg="Ver Cardápio" @click="teste()" />
+          <Button msg="Ver Cardápio" @click="router()" />
         </div>
       </div>
       <div class="landing-container">
@@ -57,7 +57,7 @@
         <span class="landing-container-burguer">BURGUER</span>
       </div>
     </section>
-    <section class="landing-promotion">
+    <section class="landing-promotion" id="Promoções">
       <h2 class="landing-promotion-title">
         PROMOÇÕES <span class="landing-promotion-title-white">DA SEMANA</span>
       </h2>
@@ -67,10 +67,10 @@
         </div>
       </div>
       <div class="landing-promotion-button">
-        <Button msg="Ver Cardápio" @click="teste()" />
+        <Button msg="Ver Cardápio" @click="router()" />
       </div>
     </section>
-    <section class="landing-work" id="servicos">
+    <section class="landing-work" id="cardapio">
       <span class="landing-work-title">COMO FUNCIONA</span>
       <div class="landing-work-sequence">
         <div class="landing-work-sequence-phases bottom">
@@ -231,7 +231,7 @@ export default {
     };
   },
   methods: {
-    teste() {
+    router() {
       this.$router.push('/menu')
     },
   },

@@ -287,32 +287,35 @@
 }
 
 @media screen and (max-width: 1710px) {
-    &-servicos {
-        padding: 0;
-        flex-direction: column;
+    .landind {
 
-        &-section {
-            &-container {
-                &-servico {
-                    &-title {
-                        font-size: 30px;
+        &-servicos {
+            padding: 0;
+            flex-direction: column;
+    
+            &-section {
+                &-container {
+                    &-servico {
+                        &-title {
+                            font-size: 30px;
+                        }
                     }
-                }
-
-                &-imagem {
-                    height: 500px;
-                }
-
-                &-card {
-                    width: 350px;
-                    padding: 15px;
-
-                    &-title {
-                        font-size: 20px;
+    
+                    &-imagem {
+                        height: 500px;
                     }
-
-                    &-texto {
-                        font-size: 16px;
+    
+                    &-card {
+                        width: 350px;
+                        padding: 15px;
+    
+                        &-title {
+                            font-size: 20px;
+                        }
+    
+                        &-texto {
+                            font-size: 16px;
+                        }
                     }
                 }
             }

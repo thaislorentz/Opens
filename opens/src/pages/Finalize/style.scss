@@ -1,0 +1,21 @@
+@import "@/assets/scss/_colors.scss";
+
+.finalize {
+    &-header {
+        margin: 0 20px;
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+
+        &-image {
+            width: 130px;
+        }
+        
+        &-title {
+            text-align: center;
+            color: $predominant;
+            font-size: 50px;
+            width: calc(100% - 200px);
+        }
+    }
+}

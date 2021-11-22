@@ -1,5 +1,7 @@
 <template>
   <div class="checkout">
+    <div class="checkout-container">
+
     <div class="checkout-header">
       <router-link to="/">
         <img
@@ -50,8 +52,9 @@
       </div>
     </div>
     <div class="checkout-button">
-      <Button @click="() => this.$router.push('/checkout-1')" />
-      <Button @click="() => this.$router.push('/checkout-3')" />
+      <Button @click="() => this.$router.push('/checkout-2')" />
+      <Button @click="() => this.$router.push('/finalize')" />
+    </div>
     </div>
     <Footer />
   </div>
@@ -85,7 +88,7 @@ export default {
 
     &-input {
       margin: 10px;
-      width: 400px;
+      width: 300px;
 
       &.size {
         width: 600px;
@@ -99,9 +102,6 @@ export default {
   .checkout {
     &-address {
     &-input {
-      margin: 10px;
-      width: 300px;
-
       &.size {
         width: 300px;
       }

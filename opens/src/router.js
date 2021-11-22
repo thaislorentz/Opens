@@ -5,6 +5,7 @@ import Menu from './pages/Menu/Menu.vue'
 import CheckoutName from './pages/Checkout/CheckoutName.vue'
 import CheckoutContact from './pages/Checkout/CheckoutContact.vue'
 import CheckoutAddress from './pages/Checkout/CheckoutAddress.vue'
+import Finalize from './pages/Finalize/Finalize.vue'
 
 Vue.use(Router)
 
@@ -36,6 +37,10 @@ export default new Router({
             name: 'checkoutAddress',
             component: CheckoutAddress
         },
-        
+        {
+            path: '/finalize',
+            name: 'finalize',
+            component: Finalize
+        }
     ]
 })
