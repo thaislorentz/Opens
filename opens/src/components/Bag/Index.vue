@@ -2,27 +2,27 @@
   <div class="bag">
     <h2>Pedido</h2>
     <div class="bag-line" />
-    <div v-if="selected.lenght > 0">
-    <div v-for="(food, index) in selected" :key="index" class="bag-items" >
-      <img class="bag-image" :src="food.img" :alt="food.name" />
-      <div>
-        <h4 class="bag-items-name">{{ food.name }}</h4>
-        <p class="bag-items-description">{{ food.description }}</p>
-      </div>
-      <div class="bag-delete">
-        <font-awesome-icon
-          class="social-icon"
-          :icon="['fab', 'font-awesome']"
-        />
+    <div v-if="selected.length > 0">
+      <div v-for="(food, index) in selected" :key="index" class="bag-items">
+        <img class="bag-image" :src="food.img" :alt="food.name" />
+        <div>
+          <h4 class="bag-items-name">{{ food.name }}</h4>
+          <p class="bag-items-description">{{ food.description }}</p>
+        </div>
+        <div class="bag-delete" @click="removeItem(food.id)">
+          <font-awesome-icon
+            class="social-icon"
+            :icon="['fab', 'font-awesome']"
+          />
+        </div>
       </div>
     </div>
-    </div>
-    <div class="bag-button" v-if="selected.lenght > 0">
+    <div class="bag-button" v-if="selected.length > 0">
       <router-link to="/checkout-1">
         <Button />
       </router-link>
     </div>
-    <h2>Não há pedido</h2>
+    <h2 v-else>Não há pedido</h2>
   </div>
 </template>
 
@@ -35,9 +35,11 @@ export default {
   },
   props: {
     selected: Array,
+    removeItem: Function,
   },
   data() {
-    return {};
+    return {
+    };
   },
 };
 </script>

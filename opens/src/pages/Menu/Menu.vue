@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-      <Bag :selected="carts"/>
+      <Bag :selected="carts" :removeItem="removeItem"/>
     </div>
     <Footer />
   </div>
@@ -75,14 +75,22 @@ export default {
           console.log(error);
         });
     },
+    removeItem(id) {
+      axios.delete(`${baseURL}/cart/${id}`)
+    .then(() => {
+      this.getCart()
+    }).catch((error) => {
+      console.log(error)
+    })
+    },
     addCart(food) {
       axios
         .post(`${baseURL}/cart`, food)
         .then(() => {
           this.getCart()
         })
-        .catch((error) => {
-          console.log(error);
+        .catch(() => {
+          window.alert('Você já adicionou este produto :(')
         });
     },
     filterFood (value) {
