@@ -1,25 +1,29 @@
 <template>
   <div class="card">
-    <img class="card-image" :src="promotion.img" :alt="promotion.name" />
+    <img class="card-image" :src="food.img" :alt="food.name" />
     <div class="card-details">
       <div class="card-information">
-        <h3 class="card-information-name">{{ promotion.name }}</h3>
-        <p class="card-information-description">{{ promotion.description }}</p>
+        <h3 class="card-information-name">{{ food.name }}</h3>
+        <p class="card-information-description">{{ food.description }}</p>
       </div>
-      <Button />
+      <Button @click="addCart(food)"/>
     </div>
   </div>
 </template>
 
 <script>
 import Button from "../Button/Index.vue";
+
 export default {
   name: "Card",
   components: {
     Button,
   },
   props: {
-    promotion: Object,
+    food: Object,
+    addCart: Function
+  },
+  methods: {
   },
 };
 </script>
