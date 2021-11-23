@@ -11,7 +11,7 @@
             />
           </router-link>
           <div class="menu-input">
-          <Input type="search" v-model="search"/>
+          <Input type="search" v-model="search" placeholder="Busque o que esta no seu paladar"/>
           </div>
         </div>
         <div class="menu-food">
@@ -51,7 +51,7 @@ export default {
   },
   watch: {
     search: function () {
-      this.filterDevices(this.search)
+      this.filterFood(this.search)
     }
   },
   methods: {
@@ -85,7 +85,7 @@ export default {
           console.log(error);
         });
     },
-    filterDevices (value) {
+    filterFood (value) {
     if (value === '' || value === null) {
     this.getFood()
     }

@@ -32,7 +32,7 @@
     </div>
     <div class="checkout-form">
     <div class="checkout-form-size">
-      <Input type="form" />
+      <Input type="form" placeholder="Telefone" v-model="phone"/>
       </div>
     </div>
     <div class="checkout-button">
@@ -48,6 +48,7 @@
 import Button from "../../components/Button/Index.vue";
 import Input from "../../components/Input/Index.vue";
 import Footer from "../../components/Footer/Index.vue";
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: "CheckoutContact",
@@ -58,6 +59,27 @@ export default {
     Button,
     Input,
     Footer,
+  },
+  created() {
+    if (this.getCustomer.phone) {
+      this.phone = this.getCustomer.phone
+    }
+  }, 
+  computed: {
+    ...mapGetters(['getCustomer', 'hasCustomer']),
+  },
+  data() {
+    return{
+      phone: ''
+    }
+  },
+  watch: {
+    phone: function () {
+      this.setCustomer({ phone: this.phone});
+    },
+  },
+  methods: {
+    ...mapActions(['setCustomer']),
   },
 };
 </script>

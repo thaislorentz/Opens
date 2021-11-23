@@ -34,25 +34,37 @@
             <Input type="form" placeholder="CEP" v-model="postalCode" />
           </div>
           <div class="checkout-address-input size">
-            <Input type="form" placeholder="Logradouro" v-model="street" />
+            <Input
+              type="form"
+              placeholder="Logradouro"
+              v-model="address.street"
+            />
           </div>
           <div class="checkout-address-input">
-            <Input type="form" placeholder="Número" v-model="number" />
+            <Input type="form" placeholder="Número" v-model="address.number" />
           </div>
           <div class="checkout-address-input">
-            <Input type="form" placeholder="Bairro" v-model="neighborhood" />
+            <Input
+              type="form"
+              placeholder="Bairro"
+              v-model="address.neighborhood"
+            />
           </div>
           <div class="checkout-address-input">
-            <Input type="form" placeholder="Cidade" v-model="city" />
+            <Input type="form" placeholder="Cidade" v-model="address.city" />
           </div>
           <div class="checkout-address-input size">
-            <Input type="form" placeholder="Complemento" v-model="complement" />
+            <Input
+              type="form"
+              placeholder="Complemento"
+              v-model="address.complement"
+            />
           </div>
         </div>
       </div>
       <div class="checkout-button">
-        <Button @click="() => this.$router.push('/checkout-2')" />
-        <Button @click="() => this.$router.push('/finalize')" />
+        <Button @click="() => {this.$router.push('/checkout-2'), this.saveAddress()}" />
+        <Button @click="() =>{ this.$router.push('/finalize'), this.saveAddress()}" />
       </div>
     </div>
     <Footer />
@@ -64,6 +76,7 @@ import Button from "../../components/Button/Index.vue";
 import Input from "../../components/Input/Index.vue";
 import Footer from "../../components/Footer/Index.vue";
 import axios from "axios";
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: "CheckoutContact",
@@ -78,35 +91,48 @@ export default {
   data() {
     return {
       postalCode: "",
-      street: "",
-      number: "",
-      complement: "",
-      neighborhood: "",
-      city: "",
+      address: {
+        street: "",
+        number: "",
+        complement: "",
+        neighborhood: "",
+        city: "",
+      },
     };
   },
+  created() {
+    if (this.getCustomer.address) {
+      this.postalCode = this.getCustomer.address.postalCode
+      this.address = this.getCustomer.address;
+    }
+  },
+  computed: {
+    ...mapGetters(["getCustomer", "hasCustomer"]),
+  },
   watch: {
-    postalCode: function () {
-      console.log(this.postalCode);
-      this.searchCep(this.postalCode);
-    },
+      postalCode: function () {
+        console.log(this.postalCode);
+        this.searchCep(this.postalCode);
+      },
   },
   methods: {
+    ...mapActions(["setCustomer"]),
     searchCep(cep) {
       if (cep.length == 8) {
-        
-        console.log(cep);
         axios
           .get(`https://viacep.com.br/ws/${cep}/json/`)
           .then((response) => {
-            console.log(response.data)
-            this.street = response.data.logradouro;
-            this.neighborhood = response.data.bairro;
-            this.city = response.data.localidade;
-            this.complement = response.data.complemento;
+            console.log(response.data);
+            this.address.street = response.data.logradouro;
+            this.address.neighborhood = response.data.bairro;
+            this.address.city = response.data.localidade;
+            this.saveAddress()
           })
           .catch((error) => console.log(error));
       }
+    },
+    saveAddress() {
+      this.setCustomer({ address: {...this.address, postalCode: this.postalCode}});
     },
   },
 };
