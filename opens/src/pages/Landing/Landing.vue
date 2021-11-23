@@ -9,7 +9,13 @@
       <nav class="landing-nav">
         <a class="landing-nav-items" href="#home"> Home </a>
         <a class="landing-nav-items" href="#promocoes"> Promoções </a>
-        <a class="landing-nav-items selected" href="#cardapio" @click="router()"> Cardápio </a>
+        <a
+          class="landing-nav-items selected"
+          href="#cardapio"
+          @click="router()"
+        >
+          Cardápio
+        </a>
       </nav>
     </header>
     <section class="landing-section" id="home">
@@ -63,7 +69,7 @@
       </h2>
       <div class="landing-promotion-grid">
         <div v-for="(promotion, index) in promotions" :key="index">
-          <Card :promotion="promotion" />
+          <Card :food="promotion" :addCart="addCart"/>
         </div>
       </div>
       <div class="landing-promotion-button">
@@ -80,8 +86,8 @@
               >Navegue pelo site</span
             >
             <span class="landing-work-sequence-phases-text-information"
-              >Lorem ipsum dolor sit amet, consectetur </span
-            >
+              >Lorem ipsum dolor sit amet, consectetur
+            </span>
           </div>
         </div>
         <div class="landing-work-sequence-phases top">
@@ -91,8 +97,8 @@
               >Decida o que comer</span
             >
             <span class="landing-work-sequence-phases-text-information"
-              >Lorem ipsum dolor sit amet, consectetur </span
-            >
+              >Lorem ipsum dolor sit amet, consectetur
+            </span>
           </div>
         </div>
         <div class="landing-work-sequence-phases bottom">
@@ -102,8 +108,8 @@
               >Finalize a compra</span
             >
             <span class="landing-work-sequence-phases-text-information"
-              >Lorem ipsum dolor sit amet, consectetur </span
-            >
+              >Lorem ipsum dolor sit amet, consectetur
+            </span>
           </div>
         </div>
         <div class="landing-work-sequence-phases">
@@ -129,7 +135,7 @@
           />
           <div class="landing-menu-section-container-card">
             <Card
-              :promotion="{
+              :food="{
                 name: 'Hospedagens',
                 description:
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet',
@@ -150,7 +156,7 @@
           />
           <div class="landing-menu-section-container-card">
             <Card
-              :promotion="{
+              :food="{
                 name: 'Hospedagens',
                 description:
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do Lorem ipsum dolor sit amet',
@@ -160,7 +166,7 @@
         </div>
       </div>
     </section>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -168,72 +174,50 @@
 import Button from "../../components/Button/Index.vue";
 import Card from "../../components/Card/Index.vue";
 import Footer from "../../components/Footer/Index.vue";
+import axios from "axios";
+
+const baseURL = "http://localhost:3000";
 
 export default {
   name: "Landing",
   components: {
     Button,
     Card,
-    Footer
+    Footer,
   },
   data() {
     return {
-      promotions: [
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 1,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 2,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 3,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 4,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 5,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 6,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 7,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 8,
-        },
-      ],
+      promotions: [],
     };
   },
   methods: {
     router() {
-      this.$router.push('/menu')
+      this.$router.push("/menu");
     },
+    getPromotion() {
+      axios
+        .get(`${baseURL}/produtos`)
+        .then((response) => {
+          this.promotions = response.data.slice(0, 8);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    addCart(food) {
+      console.log(food, 'shuidh')
+      axios
+        .post(`${baseURL}/cart`, food)
+        .then(() => {
+          this.router()
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  created() {
+    this.getPromotion();
   },
 };
 </script>

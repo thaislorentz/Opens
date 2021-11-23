@@ -11,16 +11,16 @@
             />
           </router-link>
           <div class="menu-input">
-          <Input type="search"/>
+          <Input type="search" v-model="search"/>
           </div>
         </div>
         <div class="menu-food">
-          <div v-for="(promotion, index) in promotions" :key="index">
-            <Card :promotion="promotion" />
+          <div v-for="(food, index) in foods" :key="index">
+          <Card :food="food" :addCart="addCart"/>
           </div>
         </div>
       </div>
-      <Bag />
+      <Bag :selected="carts"/>
     </div>
     <Footer />
   </div>
@@ -31,7 +31,9 @@ import Bag from "../../components/Bag/Index.vue";
 import Card from "../../components/Card/Index.vue";
 import Input from "../../components/Input/Index.vue";
 import Footer from "../../components/Footer/Index.vue";
+import axios from "axios";
 
+const baseURL = "http://localhost:3000";
 export default {
   name: "Menu",
   components: {
@@ -42,62 +44,63 @@ export default {
   },
   data() {
     return {
-      promotions: [
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 1,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 2,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 3,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 4,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 5,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 6,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 7,
-        },
-        {
-          img: "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-          name: "Combo sanduiches",
-          description: "Contém 2 sanduiches, anéis de cebola, batata ....",
-          id: 8,
-        },
-      ],
+      foods: [],
+      carts: [],
+      search: ''
     };
   },
+  watch: {
+    search: function () {
+      this.filterDevices(this.search)
+    }
+  },
   methods: {
-    teste() {
-      console.log("foi");
+    getFood() {
+      axios
+        .get(`${baseURL}/produtos`)
+        .then((response) => {
+          this.foods = response.data.slice(0, 8);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
+    getCart() {
+      axios
+        .get(`${baseURL}/cart`)
+        .then((response) => {
+          this.carts = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    addCart(food) {
+      axios
+        .post(`${baseURL}/cart`, food)
+        .then(() => {
+          this.getCart()
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    filterDevices (value) {
+    if (value === '' || value === null) {
+    this.getFood()
+    }
+    else {
+      this.foods = this.foods.filter((food) => {
+        return (food.name && food.name.toLowerCase().includes(value.toLowerCase()))
+          || (food._id === (value))
+          || (food.description && food.description.toLowerCase().includes(value.toLowerCase()))
+      })
+    }
+  }
+  },
+  created() {
+    this.getFood();
+    this.getCart();
   },
 };
 </script>

@@ -1,0 +1,55 @@
+{
+  "produtos": [
+    {
+      "img": "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+      "name": "Combo sanduiches",
+      "description": "Contém 2 sanduiches, anéis de cebola, batata ....",
+      "id": 1
+    },
+    {
+      "img": "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+      "name": "sanduiches",
+      "description": "Contém 2 sanduiches, anéis de cebola, batata ....",
+      "id": 2
+    },
+    {
+      "img": "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+      "name": "sanduiches",
+      "description": "Contém 2 sanduiches, anéis de cebola, batata ....",
+      "id": 3
+    },
+    {
+      "img": "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+      "name": "sanduiches",
+      "description": "Contém 2 sanduiches, anéis de cebola, batata ....",
+      "id": 4
+    },
+    {
+      "img": "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+      "name": "sanduiches",
+      "description": "Contém 2 sanduiches, anéis de cebola, batata ....",
+      "id": 5
+    },
+    {
+      "img": "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+      "name": "sanduiches",
+      "description": "Contém 2 sanduiches, anéis de cebola, batata ....",
+      "id": 6
+    },
+    {
+      "img": "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+      "name": "sanduiches",
+      "description": "Contém 2 sanduiches, anéis de cebola, batata ....",
+      "id": 7
+    },
+    {
+      "img": "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
+      "name": "sanduiches",
+      "description": "Contém 2 sanduiches, anéis de cebola, batata ....",
+      "id": 8
+    }
+  ],
+  "cart": [
+    
+  ]
+}
