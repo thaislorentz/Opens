@@ -3,7 +3,7 @@
     <label v-if="type === 'search'" class="input-label" htmlFor="searchDevice"
       ><font-awesome-icon class="social-icon" :icon="['fab', 'font-awesome']"
     /></label>
-    <input :class="type === 'search' ? 'input-input': 'form-input'" type="text"  @input="$emit('input', $event.target.value)"/>
+    <input :value="value" :class="type === 'search' ? 'input-input': 'form-input'" type="text" :placeholder="placeholder" @input="$emit('input', $event.target.value)"/>
   </div>
 </template>
 
@@ -12,6 +12,8 @@ export default {
   name: "Footer",
   props: {
     type: String,
+    placeholder: String,
+    value: String,
   },
 };
 </script>
