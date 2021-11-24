@@ -205,7 +205,6 @@ export default {
         });
     },
     addCart(food) {
-      console.log(food, 'shuidh')
       axios
         .post(`${baseURL}/cart`, food)
         .then(() => {

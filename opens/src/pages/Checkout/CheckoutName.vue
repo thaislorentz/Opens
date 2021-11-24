@@ -36,8 +36,8 @@
         </div>
       </div>
       <div class="checkout-button">
-        <Button @click="() => this.$router.push('/menu')" />
-        <Button @click="() => this.$router.push('/checkout-2')" />
+        <Button msg="Voltar" @click="() => this.$router.push('/menu')" />
+        <Button msg="Próximo" @click="() => this.$router.push('/checkout-2')" />
       </div>
     </div>
       <Footer />

@@ -1,5 +1,6 @@
 <template>
   <div class="finalize">
+    <div class="finalize-container">
     <div class="finalize-header">
       <router-link to="/">
         <img
@@ -10,28 +11,35 @@
       </router-link>
       <h1 class="finalize-header-title">EBA!!!</h1>
     </div>
-    <div>
-      <p>
-        <span>WICTOR,</span> seu pedido foi concluido! <br/>
-        Iremos entregar na <span>RUA ALEMANHA 163  APTO 101,</span><br/>
-        Caso tenhamos problemas vamos ligar no número <span> (31) 98266-3127.</span><br/>
+    <div class="finalize-content">
+      <p class="finalize-content-text">
+        <span class="finalize-content-text-destaque">{{getCustomer.name}},</span> seu pedido foi concluido! <br/>
+        Iremos entregar na <span class="finalize-content-text-destaque">{{getCustomer.address.street}} {{getCustomer.address.number}} {{getCustomer.address.complement}} {{getCustomer.address.neighborhood}},</span><br/>
+        Caso tenhamos problemas vamos ligar no número <span class="finalize-content-text-destaque"> {{getCustomer.phone}}.</span><br/>
       </p>
+    </div>
+    <div class="finalize-button">
+    <Button msg="COMPRAR MAIS" @click="() => this.$router.push('/')" />
+    </div>
     </div>
     <Footer />
   </div>
 </template>
 
 <script>
-// import Button from "../../components/Button/Index.vue";
+import Button from "../../components/Button/Index.vue";
 import Footer from "../../components/Footer/Index.vue";
+import { mapGetters } from 'vuex'
 
 export default {
-  name: "Landing",
+  name: "Finalize",
   components: {
-    // Button,
+    Button,
     Footer,
   },
-  methods: {},
+  computed: {
+    ...mapGetters(['getCustomer']),
+  },
 };
 </script>
 

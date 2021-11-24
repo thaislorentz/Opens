@@ -18,9 +18,7 @@
       </div>
     </div>
     <div class="bag-button" v-if="selected.length > 0">
-      <router-link to="/checkout-1">
-        <Button />
-      </router-link>
+        <Button msg="CONCLUIR PEDIDO" @click="() => this.$router.push('/checkout-1')" />
     </div>
     <h2 v-else>Não há pedido</h2>
   </div>

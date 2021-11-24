@@ -63,8 +63,22 @@
         </div>
       </div>
       <div class="checkout-button">
-        <Button @click="() => {this.$router.push('/checkout-2'), this.saveAddress()}" />
-        <Button @click="() =>{ this.$router.push('/finalize'), this.saveAddress()}" />
+        <Button
+          msg="Voltar"
+          @click="
+            () => {
+              this.$router.push('/checkout-2'), this.saveAddress();
+            }
+          "
+        />
+        <Button
+          msg="Finalizar"
+          @click="
+            () => {
+              this.$router.push('/finalize'), this.addOrder();
+            }
+          "
+        />
       </div>
     </div>
     <Footer />
@@ -76,8 +90,9 @@ import Button from "../../components/Button/Index.vue";
 import Input from "../../components/Input/Index.vue";
 import Footer from "../../components/Footer/Index.vue";
 import axios from "axios";
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters } from "vuex";
 
+const baseURL = "http://localhost:3000";
 export default {
   name: "CheckoutContact",
   props: {
@@ -102,7 +117,7 @@ export default {
   },
   created() {
     if (this.getCustomer.address) {
-      this.postalCode = this.getCustomer.address.postalCode
+      this.postalCode = this.getCustomer.address.postalCode;
       this.address = this.getCustomer.address;
     }
   },
@@ -110,10 +125,9 @@ export default {
     ...mapGetters(["getCustomer", "hasCustomer"]),
   },
   watch: {
-      postalCode: function () {
-        console.log(this.postalCode);
-        this.searchCep(this.postalCode);
-      },
+    postalCode: function () {
+      this.searchCep(this.postalCode);
+    },
   },
   methods: {
     ...mapActions(["setCustomer"]),
@@ -122,17 +136,28 @@ export default {
         axios
           .get(`https://viacep.com.br/ws/${cep}/json/`)
           .then((response) => {
-            console.log(response.data);
             this.address.street = response.data.logradouro;
             this.address.neighborhood = response.data.bairro;
             this.address.city = response.data.localidade;
-            this.saveAddress()
+            this.saveAddress();
           })
           .catch((error) => console.log(error));
       }
     },
+    addOrder() {
+      axios
+        .post(`${baseURL}/pedido`, {name: this.getCustomer.name, phone:this.getCustomer.phone, address: { ...this.address, postalCode: this.postalCode }})
+        .then(() => {
+          this.getCart();
+        })
+        .catch(() => {
+          window.alert("Você já adicionou este produto :(");
+        });
+    },
     saveAddress() {
-      this.setCustomer({ address: {...this.address, postalCode: this.postalCode}});
+      this.setCustomer({
+        address: { ...this.address, postalCode: this.postalCode },
+      });
     },
   },
 };

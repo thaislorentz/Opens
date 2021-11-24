@@ -1,6 +1,14 @@
 @import "@/assets/scss/_colors.scss";
 
 .finalize {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    &-container {
+        height: 100%;
+        flex: 1;
+      }
     &-header {
         margin: 0 20px;
         display: flex;
@@ -10,12 +18,32 @@
         &-image {
             width: 130px;
         }
-        
+
         &-title {
             text-align: center;
             color: $predominant;
             font-size: 50px;
             width: calc(100% - 200px);
         }
+    }
+    &-content {
+        justify-content: center;
+        align-items: center;
+        margin: 50px;
+
+        &-text {
+            font-size: 30px;
+
+            &-destaque {
+                font-weight: bold;
+                font-size: 40px;
+                text-transform: uppercase;
+            }
+        }
+    }
+    &-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

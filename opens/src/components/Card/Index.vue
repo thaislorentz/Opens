@@ -6,7 +6,7 @@
         <h3 class="card-information-name">{{ food.name }}</h3>
         <p class="card-information-description">{{ food.description }}</p>
       </div>
-      <Button @click="addCart(food)"/>
+      <Button msg="EU QUERO!" @click="addCart(food)"/>
     </div>
   </div>
 </template>

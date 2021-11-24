@@ -1,12 +1,12 @@
 <template>
-  <button @click="evt => $emit('click', evt)">{{text}}Ver Cardápio</button>
+  <button @click="evt => $emit('click', evt)">{{msg}}</button>
 </template>
 
 <script>
 export default {
   name: 'Button',
   props: {
-    text: String
+    msg: String
   }
 }
 </script>
