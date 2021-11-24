@@ -49,13 +49,6 @@
       "id": 8
     }
   ],
-  "cart": [
-    {
-      "img": "https://www.freeiconspng.com/thumbs/fast-food-png/fast-food-png-most-popular-fast-food-snacks-in-your-area-and-most--3.png",
-      "name": "Combo sanduiches",
-      "description": "Contém 2 sanduiches, anéis de cebola, batata",
-      "id": 1
-    }
-  ],
+  "cart": [],
   "pedido": []
 }
